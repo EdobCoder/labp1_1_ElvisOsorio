@@ -4,17 +4,69 @@
  */
 package labp1_1_elvisosorio;
 
+import java.util.Scanner;
+
 /**
  *
  * @author EDOB
  */
-public class LabP1_1_ElvisOsorio {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class LabP1_1_ElvisOsorio {    
     
+    public static void main(String[] args) {
+        int respuesta = -1;
+        
+        Scanner read = new Scanner(System.in);
+        
+        while(respuesta != 0){
+            
+            System.out.println("Menu Principal");
+            System.out.println("");
+            System.out.println("Opcion 1: Mensaje");
+            System.out.println("Opcion 2: Calculadora");
+            System.out.println("Opcion 3: Edades");
+            
+            System.out.println("");
+            System.out.print("Ingrese la opcion: ");
+            respuesta = read.nextInt();
+            
+            //Opcion 1
+            if(respuesta == 1){
+                System.out.println("----------------");
+                System.out.println("Mensaje");
+                System.out.println("----------------");
+                System.out.println("El mensaje es: Hola Mundo!");
+                
+            //Opcion 2
+            } else if(respuesta == 2){
+                System.out.println("----------------");
+                System.out.println("Calculadora para Multiplicar");
+                System.out.println("----------------");
+                System.out.println("");
+                System.out.print("Ingrese el primer numero: ");
+                int num1 = read.nextInt();
+                System.out.print("Ingrese el segundo numero: ");
+                int num2 = read.nextInt();
+                
+                int resultado = num1 * num2;
+                
+                System.out.println("Resultado: "+ resultado);
+            
+            //Calculadora de Edades    
+            } else if(respuesta == 3){
+                System.out.print("Ingrese su edad: ");
+                int edad = read.nextInt();
+                
+                if(edad >= 18){
+                    System.out.println("Usted es mayor de edad.");
+                } else {
+                    System.out.println("Compa usted no es mayor de edad");
+                }
+            }
+            System.out.println("");
+            System.out.println("/////////////////////////////");
+            System.out.println("");
+            System.out.println("Presione 1 para ejecutar de nuevo o 0 para detener");
+            respuesta = read.nextInt();
+        }
+    }
 }
